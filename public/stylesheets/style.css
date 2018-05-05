@@ -2,6 +2,7 @@ body {
   padding: 30px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   color: #555555;
+  background-color: #303753;
 }
 
 a {
@@ -15,7 +16,7 @@ a {
   border-radius: 6px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 25px;
+  margin-top: 85px;
 }
 
 .container2 {
@@ -52,42 +53,6 @@ a {
   float: left;
 }
 
-
-.container h3 a {
-  text-decoration: none;
-  padding: 10px 20px;
-  background-color: #00AE4D;
-  border-radius: 6px;
-  color: #FFFFFF;
-}
-
-
-.container table {
-  width: 360px;
-}
-
-.container table tr td {
-  padding: 5px;
-}
-
-.container table tr td input, .container table tr td textarea {
-  border: solid 1px #dddddd;
-  padding: 5px 10px;
-  border-radius: 6px;
-  width: 100%;
-  color: #777777;
-}
-
-.container table tr td button {
-  border: solid 1px #AABF5C;
-  background-color: #00AE4D;
-  border-radius: 6px;
-  text-transform: uppercase;
-  color: #FFFFFF;
-  margin: 10px 0;
-  padding: 10px 20px;
-}
-
 .container form button {
   border: solid 1px grey;
   background-color: grey;
@@ -114,12 +79,16 @@ body {
 }
 
 .navbar {
+  position: fixed;
+  height: auto;
+  margin-top: -13px;
   list-style-type: none;
-  margin: -5px;
-  padding: 0;
-  overflow: hidden;
-  background-color: #111111;
-  opacity: 0.5;
+  background-color: #212639;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  right: 0;
+
 }
 
 .lr {
@@ -131,25 +100,24 @@ body {
 .lr2 {
   display: inline;
   float: right;
-  background-color: #111111;
-  border-radius: 10px;
 }
 
 .lr3 {
+  list-style-type: none;
   font-size: 18px;
   font-style: italic;
 }
 
-.lr2:hover {
-  opacity: 0.5;
-  background-color: #111111;
-  border-radius: 10px;
+.lr2:hover{
+  opacity: 0.2;
+}
+
+.lr:hover{
+  opacity: 0.2;
 }
 
 .lr3:hover {
-  opacity: 0.5;
-  background-color: #111111;
-  border-radius: 10px;
+  opacity: 0.2;
 }
 
 li a {
@@ -160,10 +128,8 @@ li a {
   text-decoration: none;
 }
 
-.lr a:hover {
-  background-color: #111111;
-  border-radius: 10px;
-  opacity: 0.5;
+.lr:hover {
+  color: white;
 }
 
 h2 {
@@ -197,7 +163,6 @@ img {
   border-radius: 4px;
   opacity: 0.9;
   font-family: "Segoe UI Semibold";
-
 }
 
 .bottombar {
@@ -221,12 +186,26 @@ img {
   font-size: 45px;
   margin-top: 20%;
 }
+
 .text2 {
   display: block;
   color: white;
   text-align: center;
   font-size: 25px;
   margin-bottom: -20%;
+}
+
+.text3 {
+  display: block;
+  text-align: center;
+  font-size: 15px;
+  color: white;
+}
+
+.text4 {
+  display: block;
+  margin-top: 25px;
+  text-align: center;
 }
 
 #regist {
@@ -242,6 +221,13 @@ img {
 
 .form1 {
   text-align: center;
+}
+
+.form2 {
+  text-align: center;
+  margin-top: 65px;
+  color: white;
+  padding: 3px;
 }
 
 .otsik {
@@ -281,4 +267,12 @@ img {
 .alert-danger {
   text-align: center;
   margin-top:25px;
+}
+
+.stripe {
+  margin-top: 100px;
+}
+
+.container4 {
+  margin-top: -50px;
 }
