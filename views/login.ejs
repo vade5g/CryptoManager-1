@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+    <link rel='stylesheet' href='stylesheets/style.css'/>
+</head>
+<body>
+
+<ul class="navbar">
+    <li class="lr3"><a onclick="test" href="/">Crypto Asset Manager</a></li>
+    <li class="lr"><a href="/signup">Sign Up</a></li>
+</ul>
+
+    <div>
+
+
+        <!-- show any messages that come back with authentication -->
+        <% if (message.length > 0) { %>
+        <div class="alert alert-danger"><%= message %></div>
+        <% } %>
+
+    <div class="container">
+        <!-- LOGIN FORM -->
+        <form class="form1" action="/login" method="post">
+
+            <h1 class="otsik"> Login</h1>
+            <p class="email">E-Mail</p>
+            <input name="email" class="passwd" required="required" type="text">
+            <p class="email">Password</p>
+            <input name="password" class="passwd" required="required" type="password">
+            <br>
+            <br>
+
+            <button type="submit" class="button2">Login</button>
+        </form>
+        <br>
+        <hr>
+
+        <p class="form1">Need an account? <a href="/signup">Sign up!</a></p>
+
+    </div>
+
+
+<ul class="bottombar">
+    <li class="lr"><a href="#">About Us</a></li>
+    <li class="lr"><a href="assets">Contact</a></li>
+</ul>
+
+</body>
+</html>
