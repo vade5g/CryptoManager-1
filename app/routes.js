@@ -1,6 +1,5 @@
 module.exports = function(app, passport) {
 
-
     // Home Page
     app.get('/', function(req, res) {
         res.render('index.ejs'); // load the index.ejs file
@@ -20,8 +19,6 @@ module.exports = function(app, passport) {
         failureRedirect : '/login', // redirect back to the signup page if there is an error
         failureFlash : true // allow flash messages
     }));
-
-
 
     // show the signup form
     app.get('/signup', function(req, res) {
@@ -44,6 +41,7 @@ module.exports = function(app, passport) {
         res.render('profile.ejs', {
             user : req.user // get the user out of session and pass to template
         });
+
     });
 
     // Logout
@@ -56,7 +54,7 @@ module.exports = function(app, passport) {
 
 
 // route middleware to make sure a user is logged in
-function isLoggedIn(req, res, next) {
+let isLoggedIn = (req, res, next) => {
 
     // if user is authenticated in the session
     if (req.isAuthenticated())
@@ -64,4 +62,4 @@ function isLoggedIn(req, res, next) {
 
     // if they aren't redirect them
     res.redirect('/');
-}
+};

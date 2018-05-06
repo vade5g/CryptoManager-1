@@ -10,6 +10,7 @@ const morgan       = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
 const session      = require('express-session');
+const price        = require('crypto-price');
 
 let configDB = require('./config/database.js');
 
