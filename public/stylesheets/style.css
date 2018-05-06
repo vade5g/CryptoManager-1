@@ -29,12 +29,24 @@ a {
   margin-left:auto;
 }
 
+.container4 {
+  padding: 25px;
+  background-color: #efefef;
+  border-radius: 6px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  left: 5px;
+  right: 5px;
+}
+
 .assets {
-  display: inline-block;
+  display: block;
   position: relative;
   color: white;
   width: 100%;
   margin-top: -130px;
+  margin-bottom: 75px;
   text-align: center;
   user-select: none;
 }
@@ -49,11 +61,32 @@ a {
   border-radius: 8%;
   text-align: center;
   margin: auto;
+  float: right;
+  -webkit-transition-duration: 0.8s;
+  transition-duration: 0.8s;
+  display: block;
+}
+
+.add:hover {
+  background-color: green;
+  color: white;
+}
+
+.add2 {
+  background-color: lightsteelblue;
+  border: none;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: "Segoe UI Semibold";
+  padding: 15px 32px;
+  border-radius: 8%;
+  text-align: center;
+  float: right;
   -webkit-transition-duration: 0.8s;
   transition-duration: 0.8s;
 }
 
-.add:hover {
+.add2:hover {
   background-color: green;
   color: white;
 }
