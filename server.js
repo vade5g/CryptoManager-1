@@ -1,4 +1,5 @@
-// get all the tools we need
+'use strict';
+
 const express  = require('express');
 const app      = express();
 const port     = process.env.PORT || 8080;
@@ -12,11 +13,11 @@ const bodyParser   = require('body-parser');
 const session      = require('express-session');
 const price        = require('crypto-price');
 
-let configDB = require('./config/database.js');
+let configDB        = require('./config/database.js');
+
 
 // configuration
 mongoose.connect(configDB.url); // connect to our db
-
 require('./config/passport')(passport);
 
 // set up our express application
@@ -27,6 +28,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/public'));
 
 app.set('view engine', 'ejs'); // set up ejs for templating
+app.set('view engine', 'pug');
 
 // required for passport
 app.use(session({ secret: 'asldhasldahkl231432lsfdj',

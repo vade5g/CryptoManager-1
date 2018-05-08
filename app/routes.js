@@ -1,9 +1,29 @@
-module.exports = function(app, passport) {
+module.exports = (app, passport) => {
+
+
+    let Asset = require('../app/models/Asset');
+
 
     // Home Page
-    app.get('/', function(req, res) {
-        res.render('index.ejs'); // load the index.ejs file
+    app.get('/', (req, res) =>  {
+        res.render('index.ejs')
     });
+
+
+
+    app.get('/assets', function(req, res) {
+        Asset.find({}, function (err, assets) {
+            if(err){
+                console.log(err);
+            } else {
+                res.render('assets.ejs', {
+                    title:'Assets',
+                    assets:assets
+                });
+            }
+        });
+    });
+
 
 
     // show the login form
@@ -41,7 +61,6 @@ module.exports = function(app, passport) {
         res.render('profile.ejs', {
             user : req.user // get the user out of session and pass to template
         });
-
     });
 
     // Logout
