@@ -1,6 +1,5 @@
 module.exports = (app, passport) => {
 
-
     let Asset = require('../app/models/Asset');
 
 
@@ -24,7 +23,7 @@ module.exports = (app, passport) => {
         });
     });
 
-    app.post('/assets', (req, res) => {
+    app.post('/assets/add', (req, res) => {
         let asset = new Asset();
         asset.name = req.body.name;
         asset.buyprice = req.body.buyprice;
@@ -39,6 +38,7 @@ module.exports = (app, passport) => {
             }
         });
     });
+
 
 
     // show the login form
@@ -86,14 +86,14 @@ module.exports = (app, passport) => {
         });
     });
 
-    app.get('/article/edit', function (req, res) {
-        Asset.findById(req.params.id, function(err, assets){
-            res.render('edit_assets.ejs', {
-                title: 'Edit Assets',
-                assets:assets
-            })
-        })
+
+    // new page via id
+    app.get('asset/:id', (req, res) => {
+        Asset.findById(req.params.id, function (err, asset) {
+            console.log(asset);
+        });
     });
+
 
     // Logout
     app.get('/logout', function(req, res) {

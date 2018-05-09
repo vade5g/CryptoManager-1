@@ -28,7 +28,7 @@
         <h2>Add new asset</h2>
 
         <div class="container">
-            <form action="/assets" method="post">
+            <form action="/assets/add" method="post">
                 <input type="text" placeholder="Cryptocurrency name" name="name">
                 <br><br>
                 <input type="text" placeholder="Buy price / USD" name="buyprice">
@@ -44,7 +44,6 @@
 
 
 <div class="container4">
-    <button class="add" id="myBtn">ADD NEW</button>
 
     <% for(let i = 0; i < assets.length; i++) { %>
     <ul>
@@ -58,6 +57,8 @@
     <% } %>
 
 </div>
+
+<button class="add" id="myBtn">ADD NEW</button>
 
     <div class="form2">
         <h1>Signed in as</h1>
