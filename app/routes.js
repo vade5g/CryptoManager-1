@@ -88,9 +88,17 @@ module.exports = (app, passport) => {
 
 
     // new page via id
-    app.get('asset/:id', (req, res) => {
+    app.get('/asset/:id', (req, res) => {
         Asset.findById(req.params.id, function (err, asset) {
-            console.log(asset);
+            console.log(req.params.id);
+            if(err) {
+                console.log(err);
+            } else {
+                res.render('asset.ejs', {
+                    title: req.params.id,
+                    asset: req.params.id
+                });
+            }
         });
     });
 
