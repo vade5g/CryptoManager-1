@@ -40,13 +40,6 @@ module.exports = (app, passport) => {
         });
     });
 
-    app.get('/assets/:id', (req, res) => {
-        Asset.findById(req.params.id, (err, asset) => {
-            console.log(asset);
-            return;
-        });
-    });
-
 
     // show the login form
     app.get('/login', function(req, res) {
