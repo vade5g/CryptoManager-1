@@ -5,7 +5,7 @@ let AssetSchema = new mongoose.Schema({
         type:String,
     required: true
     },
-    buyvalue:{
+    buyprice:{
         type:Number,
         required: true
     },

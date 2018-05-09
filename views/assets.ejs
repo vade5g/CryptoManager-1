@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+    <link rel='stylesheet' href='stylesheets/style.css'/>
 </head>
 <body>
 
@@ -12,6 +12,17 @@
 </ul>
 <% } %>
 
+<div class="container">
+<form action="/assets" method="post">
+    <input type="text" placeholder="Cryptocurrency name" name="name">
+    <br><br>
+    <input type="text" placeholder="Buy price / USD" name="buyprice">
+    <br><br>
+    <input type="text" placeholder="Amount" name="amount">
+    <br><br>
+    <button type="submit">Add</button>
+</form>
+</div>
 
 </body>
 </html>

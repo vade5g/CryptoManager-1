@@ -11,8 +11,8 @@ module.exports = (app, passport) => {
 
 
 
-    app.get('/assets', function(req, res) {
-        Asset.find({}, function (err, assets) {
+    app.get('/assets', (req, res) =>{
+        Asset.find({}, (err, assets) => {
             if(err){
                 console.log(err);
             } else {
@@ -24,6 +24,28 @@ module.exports = (app, passport) => {
         });
     });
 
+    app.post('/assets', (req, res) => {
+        let asset = new Asset();
+        asset.name = req.body.name;
+        asset.buyprice = req.body.buyprice;
+        asset.amount = req.body.amount;
+        
+        asset.save( (err) => {
+            if(err){
+                console.log(err);
+                return;
+            } else {
+                res.redirect('/profile');
+            }
+        });
+    });
+
+    app.get('/assets/:id', (req, res) => {
+        Asset.findById(req.params.id, (err, asset) => {
+            console.log(asset);
+            return;
+        });
+    });
 
 
     // show the login form
@@ -58,9 +80,26 @@ module.exports = (app, passport) => {
     // Profile section
     // we will want this protected so you have to be logged in to visit
     app.get('/profile', isLoggedIn, function(req, res) {
-        res.render('profile.ejs', {
-            user : req.user // get the user out of session and pass to template
+        Asset.find({}, (err, assets) => {
+            if(err){
+                console.log(err);
+            } else {
+                res.render('profile.ejs', {
+                    title:'Assets',
+                    assets:assets,
+                    user:req.user
+                });
+            }
         });
+    });
+
+    app.get('/article/edit', function (req, res) {
+        Asset.findById(req.params.id, function(err, assets){
+            res.render('edit_assets.ejs', {
+                title: 'Edit Assets',
+                assets:assets
+            })
+        })
     });
 
     // Logout

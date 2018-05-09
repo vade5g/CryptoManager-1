@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel='stylesheet' href='stylesheets/style.css'/>
+</head>
+<body>
+
+<h1><%= title %></h1>
+<% for(let i = 0; i < assets.length; i++) { %>
+<ul>
+    <li><%= assets[i].name %></li>
+</ul>
+<% } %>
+
+<div class="container">
+    <form action="/assets/edit" method="post">
+        <input type="text" placeholder="Cryptocurrency name" name="name" value= <%= assets[i].name %> >
+        <br><br>
+        <input type="text" placeholder="Buy price / USD" name="buyprice" value=<% assets[i].buyprice %>>
+        <br><br>
+        <input type="text" placeholder="Amount" name="amount" value=<% assets[i].amount %>>
+        <br><br>
+        <button type="submit">Delete</button>
+    </form>
+</div>
+
+</body>
+</html>

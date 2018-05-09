@@ -6,6 +6,8 @@ const port     = process.env.PORT || 8080;
 const mongoose = require('mongoose');
 const passport = require('passport');
 const flash    = require('connect-flash');
+const objectId = require('mongodb').ObjectId;
+const mongo    = require('mongodb').MongoClient;
 
 const morgan       = require('morgan');
 const cookieParser = require('cookie-parser');
@@ -13,11 +15,10 @@ const bodyParser   = require('body-parser');
 const session      = require('express-session');
 const price        = require('crypto-price');
 
-let configDB        = require('./config/database.js');
-
+let db        = require('./config/database.js');
 
 // configuration
-mongoose.connect(configDB.url); // connect to our db
+mongoose.connect(db.url); // connect to our db
 require('./config/passport')(passport);
 
 // set up our express application
@@ -28,7 +29,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/public'));
 
 app.set('view engine', 'ejs'); // set up ejs for templating
-app.set('view engine', 'pug');
 
 // required for passport
 app.use(session({ secret: 'asldhasldahkl231432lsfdj',

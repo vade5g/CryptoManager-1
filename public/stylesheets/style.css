@@ -5,10 +5,6 @@ body {
   background-color: #303753;
 }
 
-a {
-  color: #00B7FF;
-}
-
 .container {
   padding: 20px;
   background-color: #efefef;
@@ -31,6 +27,7 @@ a {
 
 .container4 {
   padding: 25px;
+  width: 80%;
   background-color: #efefef;
   border-radius: 6px;
   margin-left: auto;
@@ -38,6 +35,16 @@ a {
   position: relative;
   left: 5px;
   right: 5px;
+  float: left;
+}
+.container4 li {
+  list-style-type: none;
+  color: blue;
+}
+
+.container4 a {
+  color: dodgerblue;
+  text-decoration: underline;
 }
 
 .assets {
@@ -65,6 +72,7 @@ a {
   -webkit-transition-duration: 0.8s;
   transition-duration: 0.8s;
   display: block;
+  position: relative;
 }
 
 .add:hover {
@@ -222,6 +230,23 @@ img {
   font-family: "Segoe UI Semibold";
 }
 
+
+
+.button3 {
+  background-color: lightsteelblue;
+  margin-left: 15px;
+  text-decoration: none;
+  border-radius: 50%;
+  text-align: center;
+  -webkit-transition-duration: 0.8s;
+  transition-duration: 0.8s;
+}
+
+.button3:hover {
+  background-color: red;
+  color: white;
+}
+
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -305,6 +330,15 @@ img {
   text-align: center;
 }
 
+.text5 {
+  display: block;
+  color: #efefef ;
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: -20%;
+  user-select: none;
+}
+
 #regist {
   display: block;
   width: 35%;
@@ -371,8 +405,4 @@ img {
 
 .stripe {
   margin-top: 100px;
-}
-
-.container4 {
-  margin-top: -50px;
 }

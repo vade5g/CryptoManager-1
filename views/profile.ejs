@@ -26,14 +26,37 @@
     <div class="modal-content">
         <span class="close">&times;</span>
         <h2>Add new asset</h2>
-        <p>modal information</p>
-        <button class="add2"> ADD </button>
+
+        <div class="container">
+            <form action="/assets" method="post">
+                <input type="text" placeholder="Cryptocurrency name" name="name">
+                <br><br>
+                <input type="text" placeholder="Buy price / USD" name="buyprice">
+                <br><br>
+                <input type="text" placeholder="Amount" name="amount">
+                <br><br>
+                <button type="submit">Add</button>
+            </form>
+        </div>
+
     </div>
 </div>
 
+
 <div class="container4">
-    <button class="add" id="myBtn"> ADD NEW </button>
-    <p>Current assets</p>
+    <button class="add" id="myBtn">ADD NEW</button>
+
+    <% for(let i = 0; i < assets.length; i++) { %>
+    <ul>
+        <li>
+            <a href="/asset/"<%= + assets[i]._id %>><span><%= assets[i].name %> : </span></a>
+            <span><%= assets[i].buyprice%> $, </span>
+            <span><%= assets[i].amount%> pc.</span>
+            <span><%= assets[i]._id%></span>
+        </li>
+    </ul>
+    <% } %>
+
 </div>
 
     <div class="form2">
@@ -44,5 +67,6 @@
 
 
 <script src="javascripts/modal.js"></script>
+<script src="javascripts/main.js"></script>
 </body>
 </html>
